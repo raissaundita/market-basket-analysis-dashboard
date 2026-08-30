@@ -127,8 +127,8 @@ function loadCSV(filePath) {
 async function init() {
   try {
     const [orders, rules] = await Promise.all([
-      loadCSV('orders.csv'),
-      loadCSV('rules.csv')
+      loadCSV('data/orders.csv'),
+      loadCSV('data/rules.csv')
     ]);
 
     // Normalise column names to lowercase-trimmed keys
