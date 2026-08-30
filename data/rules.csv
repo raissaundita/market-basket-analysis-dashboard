@@ -1,0 +1,41 @@
+Antecedent,Consequent,Support,Confidence,Lift,Category_Antecedent,Category_Consequent,Region
+Wireless Mouse,USB Keyboard,0.18,0.72,2.88,Electronics,Electronics,West
+USB Keyboard,Wireless Mouse,0.18,0.72,2.52,Electronics,Electronics,West
+Wireless Mouse,USB Hub,0.14,0.56,2.24,Electronics,Electronics,North
+USB Hub,USB Keyboard,0.12,0.60,2.40,Electronics,Electronics,West
+Notebook,Ballpoint Pen,0.20,0.80,2.67,Office Supplies,Office Supplies,South
+Ballpoint Pen,Notebook,0.20,0.75,2.50,Office Supplies,Office Supplies,South
+Sticky Notes,Ballpoint Pen,0.16,0.70,2.33,Office Supplies,Office Supplies,East
+Stapler,Ballpoint Pen,0.14,0.82,2.73,Office Supplies,Office Supplies,South
+Notebook,Highlighter,0.18,0.65,2.17,Office Supplies,Office Supplies,North
+Ballpoint Pen,Stapler,0.14,0.50,3.13,Office Supplies,Office Supplies,East
+Laptop Bag,Laptop Stand,0.14,0.70,3.50,Accessories,Furniture,South
+Laptop Stand,Laptop Bag,0.14,0.70,3.50,Furniture,Accessories,East
+Monitor Stand,Desk Lamp,0.16,0.67,2.68,Furniture,Furniture,North
+Desk Lamp,Monitor Stand,0.16,0.73,2.92,Furniture,Furniture,West
+Cable Organizer,Monitor Stand,0.10,0.56,2.24,Accessories,Furniture,North
+Laptop Bag,USB Hub,0.12,0.60,2.40,Accessories,Electronics,East
+USB Hub,Laptop Bag,0.12,0.55,2.20,Electronics,Accessories,South
+Wireless Mouse,Laptop Bag,0.10,0.40,2.00,Electronics,Accessories,West
+Notebook,Sticky Notes,0.14,0.58,2.42,Office Supplies,Office Supplies,North
+Highlighter,Sticky Notes,0.12,0.62,2.58,Office Supplies,Office Supplies,South
+Sticky Notes,Highlighter,0.12,0.55,2.29,Office Supplies,Office Supplies,West
+Highlighter,Notebook,0.14,0.70,2.33,Office Supplies,Office Supplies,East
+Monitor Stand,Laptop Stand,0.10,0.45,2.25,Furniture,Furniture,South
+Desk Lamp,Cable Organizer,0.10,0.45,2.25,Furniture,Accessories,West
+USB Keyboard,USB Hub,0.12,0.48,1.92,Electronics,Electronics,North
+Wireless Mouse,USB Keyboard + USB Hub,0.10,0.40,2.67,Electronics,Electronics,West
+Notebook + Ballpoint Pen,Stapler,0.10,0.50,3.13,Office Supplies,Office Supplies,South
+Laptop Bag + USB Hub,Laptop Stand,0.08,0.67,3.33,Accessories,Furniture,East
+Monitor Stand + Desk Lamp,Cable Organizer,0.08,0.50,2.50,Furniture,Accessories,North
+Notebook + Sticky Notes,Highlighter,0.10,0.71,2.97,Office Supplies,Office Supplies,South
+Ballpoint Pen + Stapler,Notebook,0.08,0.57,1.90,Office Supplies,Office Supplies,East
+USB Hub + Laptop Bag,USB Keyboard,0.08,0.67,2.67,Electronics,Electronics,West
+Coffee Mug,Notebook,0.08,0.44,1.47,Kitchen,Office Supplies,North
+Coffee Mug,Sticky Notes,0.06,0.33,1.65,Kitchen,Office Supplies,West
+Cable Organizer,Desk Lamp,0.10,0.56,2.24,Accessories,Furniture,South
+Laptop Stand,Monitor Stand,0.10,0.50,2.00,Furniture,Furniture,West
+Wireless Mouse + USB Hub,USB Keyboard,0.10,0.71,2.86,Electronics,Electronics,North
+Sticky Notes + Highlighter,Ballpoint Pen,0.08,0.67,2.22,Office Supplies,Office Supplies,East
+Highlighter + Ballpoint Pen,Notebook,0.10,0.67,2.22,Office Supplies,Office Supplies,North
+Laptop Stand + Laptop Bag,Wireless Mouse,0.08,0.57,2.29,Furniture,Electronics,South

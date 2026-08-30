@@ -1,0 +1,151 @@
+Order ID,Product Name,Category,Region,Sales,Quantity,Discount
+ORD-001,Wireless Mouse,Electronics,West,45.99,1,0.05
+ORD-001,USB Keyboard,Electronics,West,89.99,1,0.05
+ORD-001,Monitor Stand,Furniture,West,35.00,1,0
+ORD-002,Ballpoint Pen,Office Supplies,East,12.50,3,0
+ORD-002,Sticky Notes,Office Supplies,East,8.75,2,0
+ORD-002,Stapler,Office Supplies,East,15.99,1,0
+ORD-003,Laptop Bag,Accessories,North,55.00,1,0.1
+ORD-003,Wireless Mouse,Electronics,North,45.99,1,0.1
+ORD-003,USB Hub,Electronics,North,29.99,1,0
+ORD-004,Notebook,Office Supplies,South,5.99,4,0
+ORD-004,Ballpoint Pen,Office Supplies,South,12.50,2,0
+ORD-004,Highlighter,Office Supplies,South,7.25,3,0
+ORD-005,Desk Lamp,Furniture,East,42.00,1,0
+ORD-005,Monitor Stand,Furniture,East,35.00,1,0
+ORD-005,Cable Organizer,Accessories,East,18.50,2,0
+ORD-006,Wireless Mouse,Electronics,West,45.99,1,0
+ORD-006,USB Keyboard,Electronics,West,89.99,1,0
+ORD-006,USB Hub,Electronics,West,29.99,1,0
+ORD-007,Coffee Mug,Kitchen,North,14.99,2,0
+ORD-007,Notebook,Office Supplies,North,5.99,1,0
+ORD-007,Ballpoint Pen,Office Supplies,North,12.50,1,0
+ORD-008,Laptop Bag,Accessories,South,55.00,1,0.05
+ORD-008,Laptop Stand,Furniture,South,68.00,1,0.05
+ORD-008,Wireless Mouse,Electronics,South,45.99,1,0
+ORD-009,Sticky Notes,Office Supplies,East,8.75,2,0
+ORD-009,Stapler,Office Supplies,East,15.99,1,0
+ORD-009,Ballpoint Pen,Office Supplies,East,12.50,3,0
+ORD-010,USB Hub,Electronics,West,29.99,1,0
+ORD-010,USB Keyboard,Electronics,West,89.99,1,0
+ORD-010,Wireless Mouse,Electronics,West,45.99,2,0.05
+ORD-011,Desk Lamp,Furniture,North,42.00,1,0
+ORD-011,Cable Organizer,Accessories,North,18.50,1,0
+ORD-011,Monitor Stand,Furniture,North,35.00,1,0
+ORD-012,Notebook,Office Supplies,South,5.99,3,0
+ORD-012,Highlighter,Office Supplies,South,7.25,2,0
+ORD-012,Sticky Notes,Office Supplies,South,8.75,1,0
+ORD-013,Laptop Bag,Accessories,East,55.00,1,0.1
+ORD-013,USB Hub,Electronics,East,29.99,1,0
+ORD-013,Laptop Stand,Furniture,East,68.00,1,0
+ORD-014,Coffee Mug,Kitchen,West,14.99,1,0
+ORD-014,Notebook,Office Supplies,West,5.99,2,0
+ORD-014,Sticky Notes,Office Supplies,West,8.75,1,0
+ORD-015,Wireless Mouse,Electronics,North,45.99,1,0
+ORD-015,USB Keyboard,Electronics,North,89.99,1,0.05
+ORD-015,Monitor Stand,Furniture,North,35.00,1,0
+ORD-016,Stapler,Office Supplies,South,15.99,1,0
+ORD-016,Ballpoint Pen,Office Supplies,South,12.50,2,0
+ORD-016,Notebook,Office Supplies,South,5.99,1,0
+ORD-017,Laptop Stand,Furniture,East,68.00,1,0
+ORD-017,Laptop Bag,Accessories,East,55.00,1,0.05
+ORD-017,USB Hub,Electronics,East,29.99,1,0
+ORD-018,Desk Lamp,Furniture,West,42.00,1,0
+ORD-018,Monitor Stand,Furniture,West,35.00,1,0
+ORD-018,Cable Organizer,Accessories,West,18.50,2,0
+ORD-019,Highlighter,Office Supplies,North,7.25,2,0
+ORD-019,Notebook,Office Supplies,North,5.99,3,0
+ORD-019,Ballpoint Pen,Office Supplies,North,12.50,1,0
+ORD-020,Wireless Mouse,Electronics,South,45.99,1,0
+ORD-020,USB Hub,Electronics,South,29.99,1,0
+ORD-020,Laptop Bag,Accessories,South,55.00,1,0
+ORD-021,Coffee Mug,Kitchen,East,14.99,2,0
+ORD-021,Sticky Notes,Office Supplies,East,8.75,1,0
+ORD-021,Highlighter,Office Supplies,East,7.25,1,0
+ORD-022,USB Keyboard,Electronics,North,89.99,1,0.05
+ORD-022,Wireless Mouse,Electronics,North,45.99,1,0
+ORD-022,USB Hub,Electronics,North,29.99,1,0
+ORD-023,Monitor Stand,Furniture,South,35.00,1,0
+ORD-023,Desk Lamp,Furniture,South,42.00,1,0
+ORD-023,Cable Organizer,Accessories,South,18.50,1,0
+ORD-024,Notebook,Office Supplies,West,5.99,2,0
+ORD-024,Ballpoint Pen,Office Supplies,West,12.50,1,0
+ORD-024,Stapler,Office Supplies,West,15.99,1,0
+ORD-025,Laptop Stand,Furniture,North,68.00,1,0
+ORD-025,Laptop Bag,Accessories,North,55.00,1,0
+ORD-025,Wireless Mouse,Electronics,North,45.99,1,0.05
+ORD-026,USB Hub,Electronics,East,29.99,2,0
+ORD-026,USB Keyboard,Electronics,East,89.99,1,0
+ORD-026,Wireless Mouse,Electronics,East,45.99,1,0
+ORD-027,Sticky Notes,Office Supplies,South,8.75,3,0
+ORD-027,Highlighter,Office Supplies,South,7.25,2,0
+ORD-027,Notebook,Office Supplies,South,5.99,1,0
+ORD-028,Coffee Mug,Kitchen,North,14.99,1,0
+ORD-028,Cable Organizer,Accessories,North,18.50,1,0
+ORD-028,Desk Lamp,Furniture,North,42.00,1,0
+ORD-029,Wireless Mouse,Electronics,West,45.99,2,0
+ORD-029,USB Keyboard,Electronics,West,89.99,1,0
+ORD-029,Laptop Bag,Accessories,West,55.00,1,0.05
+ORD-030,Ballpoint Pen,Office Supplies,East,12.50,2,0
+ORD-030,Notebook,Office Supplies,East,5.99,2,0
+ORD-030,Stapler,Office Supplies,East,15.99,1,0
+ORD-031,Monitor Stand,Furniture,South,35.00,1,0
+ORD-031,Laptop Stand,Furniture,South,68.00,1,0
+ORD-031,Desk Lamp,Furniture,South,42.00,1,0
+ORD-032,USB Hub,Electronics,North,29.99,1,0
+ORD-032,Wireless Mouse,Electronics,North,45.99,1,0
+ORD-032,Cable Organizer,Accessories,North,18.50,1,0
+ORD-033,Sticky Notes,Office Supplies,West,8.75,2,0
+ORD-033,Ballpoint Pen,Office Supplies,West,12.50,1,0
+ORD-033,Coffee Mug,Kitchen,West,14.99,1,0
+ORD-034,Laptop Bag,Accessories,East,55.00,1,0
+ORD-034,USB Hub,Electronics,East,29.99,1,0
+ORD-034,USB Keyboard,Electronics,East,89.99,1,0.05
+ORD-035,Notebook,Office Supplies,North,5.99,3,0
+ORD-035,Highlighter,Office Supplies,North,7.25,1,0
+ORD-035,Sticky Notes,Office Supplies,North,8.75,2,0
+ORD-036,Desk Lamp,Furniture,West,42.00,1,0
+ORD-036,Monitor Stand,Furniture,West,35.00,1,0
+ORD-036,Laptop Stand,Furniture,West,68.00,1,0
+ORD-037,Wireless Mouse,Electronics,South,45.99,1,0
+ORD-037,USB Keyboard,Electronics,South,89.99,1,0
+ORD-037,USB Hub,Electronics,South,29.99,1,0
+ORD-038,Cable Organizer,Accessories,East,18.50,2,0
+ORD-038,Coffee Mug,Kitchen,East,14.99,1,0
+ORD-038,Notebook,Office Supplies,East,5.99,2,0
+ORD-039,Ballpoint Pen,Office Supplies,North,12.50,2,0
+ORD-039,Stapler,Office Supplies,North,15.99,1,0
+ORD-039,Notebook,Office Supplies,North,5.99,1,0
+ORD-040,Laptop Stand,Furniture,West,68.00,1,0
+ORD-040,Laptop Bag,Accessories,West,55.00,1,0
+ORD-040,Monitor Stand,Furniture,West,35.00,1,0
+ORD-041,USB Hub,Electronics,South,29.99,2,0
+ORD-041,Wireless Mouse,Electronics,South,45.99,1,0
+ORD-041,USB Keyboard,Electronics,South,89.99,1,0.1
+ORD-042,Sticky Notes,Office Supplies,North,8.75,1,0
+ORD-042,Highlighter,Office Supplies,North,7.25,2,0
+ORD-042,Ballpoint Pen,Office Supplies,North,12.50,3,0
+ORD-043,Desk Lamp,Furniture,East,42.00,1,0
+ORD-043,Cable Organizer,Accessories,East,18.50,1,0
+ORD-043,Monitor Stand,Furniture,East,35.00,1,0
+ORD-044,Coffee Mug,Kitchen,South,14.99,2,0
+ORD-044,Notebook,Office Supplies,South,5.99,1,0
+ORD-044,Ballpoint Pen,Office Supplies,South,12.50,1,0
+ORD-045,Wireless Mouse,Electronics,East,45.99,1,0
+ORD-045,Laptop Bag,Accessories,East,55.00,1,0.05
+ORD-045,USB Hub,Electronics,East,29.99,1,0
+ORD-046,Stapler,Office Supplies,West,15.99,1,0
+ORD-046,Sticky Notes,Office Supplies,West,8.75,2,0
+ORD-046,Highlighter,Office Supplies,West,7.25,1,0
+ORD-047,Laptop Stand,Furniture,North,68.00,1,0.05
+ORD-047,Monitor Stand,Furniture,North,35.00,1,0
+ORD-047,Desk Lamp,Furniture,North,42.00,1,0
+ORD-048,USB Keyboard,Electronics,South,89.99,1,0
+ORD-048,Wireless Mouse,Electronics,South,45.99,2,0
+ORD-048,Cable Organizer,Accessories,South,18.50,1,0
+ORD-049,Notebook,Office Supplies,East,5.99,4,0
+ORD-049,Ballpoint Pen,Office Supplies,East,12.50,2,0
+ORD-049,Highlighter,Office Supplies,East,7.25,1,0
+ORD-050,Coffee Mug,Kitchen,North,14.99,1,0
+ORD-050,USB Hub,Electronics,North,29.99,1,0
+ORD-050,Laptop Bag,Accessories,North,55.00,1,0
