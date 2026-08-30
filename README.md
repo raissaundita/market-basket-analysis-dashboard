@@ -46,3 +46,48 @@ Customer yang membeli **Binders** dan **Paper** bersamaan memiliki kecenderungan
 ![Filter in Action](screenshots/filter-demo.png)
 
 ## 🗂️ Project Structure
+\`\`\`
+market-basket-analysis-dashboard/
+├── data/
+│ ├── orders.csv # Data transaksi yang sudah dirapikan
+│ └── rules.csv # Hasil association rule mining
+├── python/
+│ ├── Case Study_Interactive Charts - Order Data.csv # Data transaksi mentah
+│ ├── Data_Prepare.py # Script analisis (Apriori & association rules)
+│ └── requirements.txt # Dependencies Python
+├── screenshots/
+│ ├── dashboard-overview.png
+│ ├── rules-table.png
+│ └── filter-demo.png
+├── index.html
+├── style.css
+├── script.js
+├── LICENSE
+└── README.md
+\`\`\`
+
+
+## 🛠️ Tech Stack
+
+**Data Processing:** Python, pandas, mlxtend (Apriori algorithm)
+**Dashboard:** HTML, Tailwind CSS, Vanilla JavaScript, Chart.js, PapaParse
+
+## 🚀 How to Run
+
+### 1. Menjalankan analisis data (opsional, hasil sudah tersedia di folder `data/`)
+
+```bash
+cd python
+pip install -r requirements.txt
+python Data_Prepare.py
+```
+
+Script akan menghasilkan `orders.csv` dan `rules.csv` di folder `data/`.
+
+### 2. Menjalankan dashboard
+
+Akses langsung lewat [live demo](https://raissaundita.github.io/market-basket-analysis-dashboard/) di atas, atau jalankan lokal menggunakan Live Server (VS Code extension) dari file `index.html`.
+
+## 👤 Author
+
+Raissa Undita Estiningtyas — Mahasiswa Matematika, Institut Teknologi Sepuluh Nopember
