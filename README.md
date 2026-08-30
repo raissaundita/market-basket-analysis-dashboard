@@ -46,23 +46,25 @@ Customer yang membeli **Binders** dan **Paper** bersamaan memiliki kecenderungan
 ![Filter in Action](screenshots/filter-demo.png)
 
 ## 🗂️ Project Structure
+```text
 market-basket-analysis-dashboard/
 ├── data/
-│ ├── orders.csv # Data transaksi yang sudah dirapikan
-│ └── rules.csv # Hasil association rule mining
+│   ├── orders.csv          # Data transaksi yang sudah dirapikan
+│   └── rules.csv            # Hasil association rule mining
 ├── python/
-│ ├── Case Study_Interactive Charts - Order Data.csv # Data transaksi mentah
-│ ├── Data_Prepare.py # Script analisis (Apriori & association rules)
-│ └── requirements.txt # Dependencies Python
+│   ├── Case Study_Interactive Charts - Order Data.csv  # Data transaksi mentah
+│   ├── Data_Prepare.py      # Script analisis (Apriori & association rules)
+│   └── requirements.txt     # Dependencies Python
 ├── screenshots/
-│ ├── dashboard-overview.png
-│ ├── rules-table.png
-│ └── filter-demo.png
+│   ├── dashboard-overview.png
+│   ├── rules-table.png
+│   └── filter-demo.png
 ├── index.html
 ├── style.css
 ├── script.js
 ├── LICENSE
 └── README.md
+```
 
 ## 🛠️ Tech Stack
 
