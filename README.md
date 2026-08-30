@@ -46,7 +46,6 @@ Customer yang membeli **Binders** dan **Paper** bersamaan memiliki kecenderungan
 ![Filter in Action](screenshots/filter-demo.png)
 
 ## 🗂️ Project Structure
-\`\`\`
 market-basket-analysis-dashboard/
 ├── data/
 │ ├── orders.csv # Data transaksi yang sudah dirapikan
@@ -64,8 +63,6 @@ market-basket-analysis-dashboard/
 ├── script.js
 ├── LICENSE
 └── README.md
-\`\`\`
-
 
 ## 🛠️ Tech Stack
 
