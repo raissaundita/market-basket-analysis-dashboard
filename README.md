@@ -52,7 +52,7 @@ market-basket-analysis-dashboard/
 │   ├── orders.csv          # Data transaksi yang sudah dirapikan
 │   └── rules.csv            # Hasil association rule mining
 ├── python/
-│   ├── Case Study_Interactive Charts - Order Data.csv  # Data transaksi mentah
+│   ├── raw_order_data.csv  # Data transaksi mentah
 │   ├── Data_Prepare.py      # Script analisis (Apriori & association rules)
 │   └── requirements.txt     # Dependencies Python
 ├── screenshots/
