@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Basket Analysis Dashboard</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- PapaParse CSV Parser -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    // Tailwind custom config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:   { DEFAULT: '#3b82f6', light: '#93c5fd', dark: '#1d4ed8' },
+            secondary: { DEFAULT: '#7c3aed', light: '#c4b5fd', dark: '#5b21b6' },
+            accent:    { DEFAULT: '#10b981', light: '#6ee7b7', dark: '#065f46' },
+            warning:   { DEFAULT: '#f59e0b', light: '#fde68a', dark: '#b45309' },
+            surface:   '#f8fafc',
+            border:    '#e2e8f0',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-100 text-slate-800 min-h-screen font-sans">
+
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
+  <header class="bg-gradient-to-r from-blue-700 to-violet-700 text-white shadow-lg">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">🛒 Market Basket Analysis</h1>
+        <p class="text-blue-200 text-sm mt-0.5">Dashboard Analitik Association Rule Mining</p>
+      </div>
+      <div id="data-status" class="text-xs bg-white/20 rounded-full px-3 py-1 flex items-center gap-2">
+        <span class="loader-dot"></span>
+        <span id="status-text">Memuat data...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-screen-2xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- =========================================================
+         FILTER PANEL
+    ========================================================= -->
+    <section aria-label="Filter Panel" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+      <h2 class="text-base font-semibold text-slate-700 mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 4h18M7 9h10M11 14h2"/></svg>
+        Filter Interaktif
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
+        <!-- Support Slider -->
+        <div class="filter-group">
+          <label class="filter-label" for="filter-support">
+            Min. Support
+            <button class="info-btn" data-tip="support">ℹ</button>
+          </label>
+          <input id="filter-support" type="range" min="0" max="0.25" step="0.01" value="0" class="slider" />
+          <span id="val-support" class="filter-val">0.00</span>
+        </div>
+
+        <!-- Confidence Slider -->
+        <div class="filter-group">
+          <label class="filter-label" for="filter-confidence">
+            Min. Confidence
+            <button class="info-btn" data-tip="confidence">ℹ</button>
+          </label>
+          <input id="filter-confidence" type="range" min="0" max="1" step="0.05" value="0" class="slider" />
+          <span id="val-confidence" class="filter-val">0.00</span>
+        </div>
+
+        <!-- Lift Slider -->
+        <div class="filter-group">
+          <label class="filter-label" for="filter-lift">
+            Min. Lift
+            <button class="info-btn" data-tip="lift">ℹ</button>
+          </label>
+          <input id="filter-lift" type="range" min="0" max="4" step="0.1" value="0" class="slider" />
+          <span id="val-lift" class="filter-val">0.0</span>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label" for="filter-category">Kategori Produk</label>
+          <select id="filter-category" class="filter-select">
+            <option value="">Semua Kategori</option>
+          </select>
+        </div>
+
+        <!-- Region Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label" for="filter-region">Region</label>
+          <select id="filter-region" class="filter-select">
+            <option value="">Semua Region</option>
+          </select>
+        </div>
+
+      </div>
+      <!-- Reset button -->
+      <div class="mt-4 flex justify-end">
+        <button id="btn-reset" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium px-4 py-1.5 rounded-full border border-slate-300 transition">
+          Reset Filter
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KPI CARDS
+    ========================================================= -->
+    <section aria-label="KPI Cards">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <article class="kpi-card bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+          <div class="kpi-icon">🧾</div>
+          <div class="flex-1">
+            <p class="kpi-label">
+              Total Transaksi
+              <button class="info-btn-white" data-tip="transaksi">ℹ</button>
+            </p>
+            <p id="kpi-transaksi" class="kpi-value">—</p>
+          </div>
+        </article>
+
+        <article class="kpi-card bg-gradient-to-br from-violet-500 to-violet-600 text-white">
+          <div class="kpi-icon">📦</div>
+          <div class="flex-1">
+            <p class="kpi-label">
+              Total Produk Unik
+              <button class="info-btn-white" data-tip="produk">ℹ</button>
+            </p>
+            <p id="kpi-produk" class="kpi-value">—</p>
+          </div>
+        </article>
+
+        <article class="kpi-card bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
+          <div class="kpi-icon">🔗</div>
+          <div class="flex-1">
+            <p class="kpi-label">
+              Total Rules Ditemukan
+              <button class="info-btn-white" data-tip="rules">ℹ</button>
+            </p>
+            <p id="kpi-rules" class="kpi-value">—</p>
+          </div>
+        </article>
+
+        <article class="kpi-card bg-gradient-to-br from-amber-500 to-amber-600 text-white">
+          <div class="kpi-icon">⚡</div>
+          <div class="flex-1">
+            <p class="kpi-label">
+              Rata-rata Lift
+              <button class="info-btn-white" data-tip="lift">ℹ</button>
+            </p>
+            <p id="kpi-lift" class="kpi-value">—</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CHARTS ROW 1: Bar Chart (Top 10 Lift) + Histogram
+    ========================================================= -->
+    <section aria-label="Visualisasi Utama" class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+
+      <!-- Top 10 Product Pairs by Lift -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">
+            Top 10 Pasangan Produk (Lift Tertinggi)
+            <button class="info-btn ml-2" data-tip="top10">ℹ</button>
+          </h2>
+        </div>
+        <div class="chart-body" style="height:320px;">
+          <canvas id="chart-top10lift" aria-label="Top 10 product pairs by lift"></canvas>
+        </div>
+      </div>
+
+      <!-- Histogram: Items per Transaction -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">
+            Distribusi Jumlah Item per Transaksi
+            <button class="info-btn ml-2" data-tip="histogram">ℹ</button>
+          </h2>
+        </div>
+        <div class="chart-body" style="height:320px;">
+          <canvas id="chart-histogram" aria-label="Distribution of items per transaction"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+         CHARTS ROW 2: Heatmap + Region Rules
+    ========================================================= -->
+    <section aria-label="Visualisasi Lanjutan" class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+
+      <!-- Heatmap Co-occurrence per Category -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">
+            Heatmap Co-occurrence Antar Kategori
+            <button class="info-btn ml-2" data-tip="heatmap">ℹ</button>
+          </h2>
+        </div>
+        <div class="chart-body overflow-auto" style="min-height:280px;">
+          <div id="heatmap-container" class="heatmap-grid"></div>
+        </div>
+      </div>
+
+      <!-- Region vs Dominant Rules -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h2 class="chart-title">
+            Pola Pembelian per Region
+            <button class="info-btn ml-2" data-tip="region">ℹ</button>
+          </h2>
+        </div>
+        <div class="chart-body" style="height:280px;">
+          <canvas id="chart-region" aria-label="Rules per region"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+         RULES TABLE
+    ========================================================= -->
+    <section aria-label="Tabel Rules" class="chart-card">
+      <div class="chart-header flex flex-col sm:flex-row sm:items-center gap-3">
+        <h2 class="chart-title flex-1">
+          Tabel Association Rules
+          <button class="info-btn ml-2" data-tip="tabel">ℹ</button>
+        </h2>
+        <!-- Search -->
+        <input id="table-search" type="search" placeholder="Cari produk…"
+          class="text-sm border border-slate-300 rounded-lg px-3 py-1.5 w-full sm:w-56 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+      </div>
+
+      <div class="overflow-x-auto mt-1">
+        <table class="rules-table w-full text-sm">
+          <thead>
+            <tr>
+              <th class="sortable" data-col="antecedent">Antecedent <span class="sort-icon">⇅</span></th>
+              <th class="sortable" data-col="consequent">Consequent <span class="sort-icon">⇅</span></th>
+              <th class="sortable" data-col="support">Support <span class="sort-icon">⇅</span></th>
+              <th class="sortable" data-col="confidence">Confidence <span class="sort-icon">⇅</span></th>
+              <th class="sortable" data-col="lift">Lift <span class="sort-icon">⇅</span></th>
+              <th>Region</th>
+            </tr>
+          </thead>
+          <tbody id="rules-tbody">
+            <tr><td colspan="6" class="text-center py-8 text-slate-400">Memuat data…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="table-count" class="text-xs text-slate-400 mt-2 px-1"></p>
+    </section>
+
+    <!-- =========================================================
+         RAW DATA SECTION
+         Tab switcher: orders.csv ↔ rules.csv
+         Paginated table + search + CSV download link
+    ========================================================= -->
+    <section aria-label="Dataset Mentah" class="chart-card">
+
+      <!-- Header row -->
+      <div class="chart-header flex flex-col sm:flex-row sm:items-center gap-3">
+        <h2 class="chart-title flex-1">
+          📂 Dataset Mentah
+          <button class="info-btn ml-2" data-tip="rawdata">ℹ</button>
+        </h2>
+
+        <!-- Download buttons -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <a id="dl-orders" href="orders.csv" download="orders.csv"
+             class="raw-dl-btn">
+            ⬇ orders.csv
+          </a>
+          <a id="dl-rules" href="rules.csv" download="rules.csv"
+             class="raw-dl-btn raw-dl-btn--violet">
+            ⬇ rules.csv
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab switcher -->
+      <div class="raw-tabs" role="tablist">
+        <button id="tab-orders" class="raw-tab raw-tab--active" role="tab"
+                aria-selected="true"  data-tab="orders">
+          🧾 orders.csv
+          <span id="tab-orders-count" class="raw-tab-badge"></span>
+        </button>
+        <button id="tab-rules"  class="raw-tab" role="tab"
+                aria-selected="false" data-tab="rules">
+          🔗 rules.csv
+          <span id="tab-rules-count" class="raw-tab-badge"></span>
+        </button>
+      </div>
+
+      <!-- Search + pagination info row -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-3 mb-2">
+        <input id="raw-search" type="search" placeholder="Cari di dataset ini…"
+          class="text-sm border border-slate-300 rounded-lg px-3 py-1.5 w-full sm:w-64
+                 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
+        <p id="raw-info" class="text-xs text-slate-400 whitespace-nowrap"></p>
+      </div>
+
+      <!-- Scrollable table wrapper -->
+      <div class="overflow-x-auto">
+        <table class="raw-table w-full text-xs" id="raw-table">
+          <thead id="raw-thead"></thead>
+          <tbody id="raw-tbody">
+            <tr><td class="text-center py-8 text-slate-400">Memuat data…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination controls -->
+      <div class="flex items-center justify-between mt-3 gap-2 flex-wrap">
+        <button id="raw-prev" class="raw-page-btn" disabled>← Prev</button>
+        <div id="raw-page-nums" class="flex gap-1 flex-wrap"></div>
+        <button id="raw-next" class="raw-page-btn">Next →</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       TOOLTIP MODAL
+  ========================================================= -->
+  <div id="tooltip-modal" class="tooltip-overlay hidden" role="dialog" aria-modal="true" aria-label="Informasi">
+    <div class="tooltip-box">
+      <button id="tooltip-close" class="tooltip-close" aria-label="Tutup">✕</button>
+      <h3 id="tooltip-title" class="text-base font-semibold text-slate-800 mb-2"></h3>
+      <p id="tooltip-body" class="text-sm text-slate-600 leading-relaxed"></p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
